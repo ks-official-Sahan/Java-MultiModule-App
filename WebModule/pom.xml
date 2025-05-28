@@ -23,6 +23,12 @@
             <version>10.0.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.sahansachintha.ee</groupId>
+            <artifactId>EJBModule</artifactId>
+            <version>1.0</version>
+            <type>ejb-client</type>
+        </dependency>
     </dependencies>
 
     <build>

@@ -23,6 +23,11 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -34,6 +39,13 @@
                 <version>3.2.1</version>
                 <configuration>
                     <generateClient>true</generateClient>
+<!--                    <clientIncludes>-->
+<!--                        <clientInclude>com/sahansachintha/ee/remote/*</clientInclude>-->
+<!--                    </clientIncludes>-->
+<!--                    <clientExcludes>-->
+<!--&lt;!&ndash;                        <clientExclude>com/sahansachintha/ee/impl/*</clientExclude>&ndash;&gt;-->
+<!--                        <clientExclude>com/sahansachintha/ee/*</clientExclude>-->
+<!--                    </clientExcludes>-->
                 </configuration>
             </plugin>
         </plugins>

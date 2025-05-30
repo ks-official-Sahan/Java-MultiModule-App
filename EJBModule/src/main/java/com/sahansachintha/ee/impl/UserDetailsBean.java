@@ -8,18 +8,19 @@ import jakarta.ejb.*;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import java.io.Serializable;
 
 //@Stateless(name = "UserInfo", mappedName = "XYZ")
-//@Stateless // Stateless session cannot manage any states, because container reuses any bean from the pool randomly.
+//@Stateless // Stateless session cannot manage any states because the container reuses any bean from the pool randomly.
 //@Stateful // Stateful session beans manage states, creates object per each session, per each user.
 @Singleton
 @Startup // Creates a object of this session bean when the app is being deployed.
-public class UserDetailsBean implements UserDetails {
+public class UserDetailsBean implements UserDetails, Serializable {
 
     int count;
 
     @EJB
-    private AppSettings settings; // dependency injection (local -> @Local by default - no need to worry)
+    private transient AppSettings settings; // dependency injection (local -> @Local by default - no need to worry)
     // @EJB private AppSettings settings1;
 
     @PostConstruct
